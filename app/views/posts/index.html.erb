@@ -6,9 +6,8 @@
       <%= render partial: "shared/post_info", locals: { post: post, i: i } %>
     </a>
     <section class="comments_section">
-      <% comments_for_post = @comments.select { |comment| comment.post_id == post.id } %>
-      <% comments_for_post.each do |comment| %>
-        <%= render partial: "shared/comments_info", locals: { comment: comment } %>
+      <% @recent_comments_by_post[post.id].each do |comment| %>
+        <%= render partial: "shared/comments_info", locals: { comment: comment, i: i } %>
       <% end %>
     </section>
   <% end %>

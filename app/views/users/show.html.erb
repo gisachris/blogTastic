@@ -8,10 +8,10 @@
   </section>
   
   <section class="posts_section">
-    <% @user.posts.order(created_at: :asc).limit(3).each_with_index do |post, i| %>
+    <% @user.recent_posts.each_with_index do |post, i| %>
       <div class="post">
         <span class="title_content">
-          <h2 class="post_title">Post #<%=i + 1%></h2>
+          <a href=<%= user_post_path(@user, post)%>><h2 class="post_title">Post #<%=i + 1%></h2></a>
           <p class="post_content"><%= post.text %></p>
         </span>
         <span class="comments_likes">

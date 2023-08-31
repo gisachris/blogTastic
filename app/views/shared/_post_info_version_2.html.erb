@@ -10,8 +10,9 @@
 </div>
 
 <section class="comments_section">
-  <% comments_for_post = @comments.select { |comment| comment.post_id == post.id } %>
-  <% comments_for_post.each do |comment| %>
+<% @recent_comments.each do |comment| %>
+  <% if comment.post_id == post.id %>
     <%= render partial: "shared/comments_info", locals: { comment: comment } %>
   <% end %>
+<% end %>
 </section>
