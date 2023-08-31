@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
-    @recent_comments_by_post = @posts.map { |post| [post.id, post.recent_comments] }.to_h
+    @recent_comments_by_post = @posts.to_h { |post| [post.id, post.recent_comments] }
   end
 
   def show
