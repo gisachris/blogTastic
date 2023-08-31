@@ -1,0 +1,75 @@
+.singular_person_info {
+  display: flex;
+  column-gap: 15px;
+  width: 80%;
+  margin-bottom: 20px;
+  margin-left: 61px;
+}
+
+.bio_section {
+  margin: auto;
+  padding-left: 10px;
+  width: 70%;
+  border: 3px solid black;
+  margin-bottom: 20px;
+}
+
+.bio_header {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.bio_paragragh {
+  font-size: 1.2rem;
+}
+
+.posts_section {
+  margin: auto;
+  width: 72%;
+}
+
+.post {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+  padding: 10px;
+  border: 3px solid black;
+  margin-bottom: 15px;
+}
+
+.post_title {
+  font-size: 1rem;
+}
+
+.post_content {
+  font-size: 1.2rem;
+}
+
+.comments_likes {
+  align-self: flex-end;
+}
+
+.comments_count {
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+.likes_count {
+  font-size: 0.8rem;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgb(204, 203, 203);
+  border: 1px;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  box-shadow: 2px 5px 5px black;
+}

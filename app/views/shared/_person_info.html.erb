@@ -1,0 +1,7 @@
+<section class="singular_person_info">
+  <%= image_tag @user.photo, class: "user_info_image" %>
+  <div class="text_info">
+    <h1 class="user_info_name"><%= @user.name %></h1>
+    <h1 class="user_info_nop">Number Of Posts: <%= @user.posts_counter %></h1> 
+  </div>
+</section>

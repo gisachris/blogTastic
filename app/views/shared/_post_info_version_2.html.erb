@@ -1,0 +1,18 @@
+<div class="post">
+  <span class="title_content">
+    <h2 class="post_title_v2">Post # <%= post.id %> by <%= post.author.name%></h2>
+    <p class="post_content"><%= post.text %></p>
+  </span>
+  <span class="comments_likes_v2">
+    <span class="comments_count_v2">Comments: <%= post.comments_counter %></span>
+    <span class="likes_count_v2">Likes: <%= post.likes_counter %></span>
+  </span>
+</div>
+
+<section class="comments_section">
+<% @recent_comments.each do |comment| %>
+  <% if comment.post_id == post.id %>
+    <%= render partial: "shared/comments_info", locals: { comment: comment } %>
+  <% end %>
+<% end %>
+</section>

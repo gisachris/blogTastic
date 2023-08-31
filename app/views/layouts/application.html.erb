@@ -7,10 +7,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'user_index.css' %>
+    <%= stylesheet_link_tag 'user_show.css' %>
+    <%= stylesheet_link_tag 'post_index.css' %>
+    <%= stylesheet_link_tag 'post_show.css' %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class = "whole_content" >
+  <header></header>
+  <main>
+  <div class="Holder">
+  <%= yield %>
+  </div>
+  </main>
+  <footer class = "footer"></footer>
   </body>
 </html>
