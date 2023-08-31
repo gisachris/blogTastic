@@ -1,0 +1,17 @@
+.post_title_v2 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.comments_likes_v2 {
+  align-self: flex-start;
+}
+
+.comments_count_v2 {
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+.likes_count_v2 {
+  font-size: 0.8rem;
+}

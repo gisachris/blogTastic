@@ -1,1 +1,27 @@
-<h1>Here is a specific user</h1>
+  <%= render partial: "shared/person_info" %>
+  
+  <section class="bio_section">
+    <h1 class="bio_header">Bio</h1>
+    <p class="bio_paragraph">
+      <%= @user.bio %>
+    </p>
+  </section>
+  
+  <section class="posts_section">
+    <% @user.posts.order(created_at: :asc).limit(3).each_with_index do |post, i| %>
+      <div class="post">
+        <span class="title_content">
+          <h2 class="post_title">Post #<%=i + 1%></h2>
+          <p class="post_content"><%= post.text %></p>
+        </span>
+        <span class="comments_likes">
+          <span class="comments_count">Comments: <%= post.comments_counter %></span>
+          <span class="likes_count">Likes: <%= post.likes_counter %></span>
+        <span>
+      </div>
+    <% end %>
+  </section>
+
+  <a href="<%= user_posts_path(@user) %>">
+    <button class="button">see all posts</button>
+  </a>

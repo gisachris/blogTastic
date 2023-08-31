@@ -1,1 +1,19 @@
-<h1>Here is a list of all posts for a given user</h1>
+<%= render partial: "shared/person_info" %>
+
+<section class="posts_section">
+  <% @posts.each_with_index do |post, i| %>
+    <a href="<%= user_post_path(@user, post) %>">
+      <%= render partial: "shared/post_info", locals: { post: post, i: i } %>
+    </a>
+    <section class="comments_section">
+      <% comments_for_post = @comments.select { |comment| comment.post_id == post.id } %>
+      <% comments_for_post.each do |comment| %>
+        <%= render partial: "shared/comments_info", locals: { comment: comment } %>
+      <% end %>
+    </section>
+  <% end %>
+</section>
+
+<a href="<%= users_path %>">
+  <button class="button">Pagination</button>
+</a>

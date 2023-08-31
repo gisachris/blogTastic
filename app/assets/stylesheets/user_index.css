@@ -1,0 +1,54 @@
+.Holder {
+  width: 100%;
+  height: 100%;
+}
+
+.users_list {
+  list-style-type: none;
+}
+
+.user_info_component {
+  margin: 20px;
+  margin-bottom: 55px;
+  width: 80%;
+  display: flex;
+  column-gap: 15px;
+}
+
+.user_info_imna {
+  width: 20%;
+  display: flex;
+}
+
+.user_info_image {
+  border: 3px solid black;
+  aspect-ratio: 1/1;
+  width: 130px;
+  height: 130px;
+  margin-right: 8px;
+  margin: auto;
+  margin-right: 0;
+}
+
+.text_info {
+  border: 3px solid black;
+  width: 70%;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.user_info_name {
+  height: fit-content;
+  align-self: center;
+  color: black;
+  font-size: 2.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.user_info_nop {
+  width: 30%;
+  font-size: 1.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  align-self: self-end;
+}

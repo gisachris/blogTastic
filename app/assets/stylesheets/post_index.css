@@ -1,0 +1,20 @@
+.comments_section {
+  width: 97%;
+  padding-left: 10px;
+  border: 3px solid black;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+.comments_line {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.comment {
+  font-size: 1rem;
+  font-weight: bold;
+  align-self: center;
+  padding-left: 10px;
+}
