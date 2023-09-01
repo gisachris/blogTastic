@@ -6,6 +6,12 @@
       <%= @user.bio %>
     </p>
   </section>
+
+  <section class= "new_post_section">
+    <% if @user.id == @first_user.id %>
+      <%= link_to 'New Post', new_user_post_path(@user) %>
+    <% end %>
+  </section>
   
   <section class="posts_section">
     <% @user.recent_posts.each_with_index do |post, i| %>

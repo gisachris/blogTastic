@@ -1,0 +1,7 @@
+<section class= "new_comment_section">
+<%= form_with model: [user, post, comment], scope: "comment" do |form|%>
+  <h1 class= "comment_title">Add comment</h1>
+  <%= form.text_area :text%>
+  <%= form.submit "Comment"%>
+<% end %>
+</section>

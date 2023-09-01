@@ -1,0 +1,12 @@
+.new_comment_header {}
+
+.new_comment_section {
+  margin-top: 40px;
+  border-top: 3px solid rgb(221, 226, 145);
+  box-shadow: 2px 5px 5px black;
+  padding-left: 10px;
+}
+
+.new_comment_section > form {}
+
+.new_comment_section > form > input[type=submit] {}

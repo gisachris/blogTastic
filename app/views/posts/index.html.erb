@@ -1,5 +1,11 @@
 <%= render partial: "shared/person_info" %>
 
+<section class= "new_post_section">
+<% if @user.id == @first_user.id %>
+  <%= link_to 'New Post', new_user_post_path(@user) %>
+<% end %>
+</section>
+
 <section class="posts_section">
   <% @posts.each_with_index do |post, i| %>
     <a href="<%= user_post_path(@user, post) %>">
