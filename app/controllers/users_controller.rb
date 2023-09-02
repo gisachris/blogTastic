@@ -5,5 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @first_user = ApplicationController.new.current_user
   end
 end

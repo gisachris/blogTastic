@@ -1,0 +1,42 @@
+.new_post_section {
+  margin: 20px;
+  margin-left: 125px;
+}
+
+.new_post_section > a {
+  text-decoration: underline;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: rgb(100, 120, 163);
+}
+
+.new_post_title {
+  margin-left: 35px;
+  color: rgb(100, 120, 163);
+  text-decoration: underline;
+}
+
+.back_btn_link {
+  margin-left: 35px;
+}
+
+.back_btn {
+  margin-left: 35px;
+  box-shadow: 2px 5px 5px black;
+}
+
+.create_post_header {
+  margin-left: 35px;
+}
+
+.Holder > form {
+  margin-left: 40px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.actions {
+  margin-bottom: 10px;
+}
