@@ -26,18 +26,18 @@ class PostsController < ApplicationController
     @post = @user.posts.build(post_params)
     @post.comments_counter = 0
     @post.likes_counter = 0
-  
+
     if @post.save
       redirect_to user_post_path(@user, @post), notice: 'Post was successfully created.'
     else
       render :new
     end
-  end  
+  end
 
   def like
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    if already_liked?(@user,@post)
+    if already_liked?(@user, @post)
       redirect_to user_post_path(@user, @post)
     else
       @like = @post.likes.new(author_id: @user.id, post_id: @post.id)
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @like = Like.find_by(author_id: @user.id, post_id: @post.id)
-  
+
     if @like
       if @like.destroy
         redirect_to user_post_path(@user, @post), notice: 'Post unliked successfully.'
