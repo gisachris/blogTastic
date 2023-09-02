@@ -19,12 +19,7 @@ class PostsController < ApplicationController
     @post = @user.posts.build
     @post.comments_counter = 0
     @post.likes_counter = 0
-  end  
-
-  # def new
-  #   @post = Post.new
-  #   @first_user = ApplicationController.new.current_user
-  # end
+  end
 
   def create
     @user = User.find(params[:user_id])
@@ -39,9 +34,45 @@ class PostsController < ApplicationController
     end
   end  
 
+  def like
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    if already_liked?(@user,@post)
+      redirect_to user_post_path(@user, @post)
+    else
+      @like = @post.likes.new(author_id: @user.id, post_id: @post.id)
+
+      if @like.save
+        redirect_to user_post_path(@user, @post)
+      else
+        redirect_to user_posts_path(@user)
+      end
+    end
+  end
+
+  def unlike
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    @like = Like.find_by(author_id: @user.id, post_id: @post.id)
+  
+    if @like
+      if @like.destroy
+        redirect_to user_post_path(@user, @post), notice: 'Post unliked successfully.'
+      else
+        redirect_to user_post_path(@user, @post), alert: 'Error occurred while unliking the post.'
+      end
+    else
+      redirect_to user_post_path(@user, @post), alert: 'You have not liked this post.'
+    end
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :text)
+  end
+
+  def already_liked?(user, post)
+    Like.exists?(author_id: user.id, post_id: post.id)
   end
 end
