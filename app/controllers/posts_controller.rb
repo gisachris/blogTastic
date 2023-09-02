@@ -26,7 +26,6 @@ class PostsController < ApplicationController
     @post = @user.posts.build(post_params)
     @post.comments_counter = 0
     @post.likes_counter = 0
-
     if @post.save
       redirect_to user_post_path(@user, @post), notice: 'Post was successfully created.'
     else
