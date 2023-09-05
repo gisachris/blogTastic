@@ -22,5 +22,5 @@
     <%= render partial: "shared/comments_info", locals: { comment: comment } %>
   <% end %>
 <% end %>
-<%= render partial: "comments/form", locals: { user: @user, post: @post, comment: @new_comment } %>
+<%= render partial: "comments/form", locals: { user: current_user, post: post, comment: new_comment } %>
 </section>
