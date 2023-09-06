@@ -1,10 +1,9 @@
   <ul class="users_list">
     <% @users.each do |user| %>
       <li class = 'user_info_component'>
-        <a href = "<%= user_path(user) %>" class = "user_info_imna"><%= image_tag user.photo, class: "user_info_image" %>
-        </a>
+        <img src='https://images3.alphacoders.com/690/690494.jpg' alt= "user image" class= "user_info_image" %>
         <div class = "text_info">
-          <h1 class = 'user_info_name'><%= user.name %></ h1>
+          <%= link_to  user.name, user_path(user), class: "user_info_name" %>
           <h1 class = 'user_info_nop'>Number Of Posts:  <%= user.posts_counter %></h1> 
         </div>
       </li>

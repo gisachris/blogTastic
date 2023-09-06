@@ -8,7 +8,7 @@
 
 <section class="posts_section">
   <% @posts.each_with_index do |post, i| %>
-    <a href="<%= user_post_path(@user, post) %>">
+    <a href="<%= user_post_path(@user, post) %>" class="user_post_link">
       <%= render partial: "shared/post_info", locals: { post: post, i: i } %>
     </a>
     <section class="comments_section">

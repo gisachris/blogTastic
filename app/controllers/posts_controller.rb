@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = Post.includes(:author, :comments).where(author: @user).references(:author)
     @recent_comments_by_post = @posts.to_h { |post| [post.id, post.recent_comments] }
-
     @first_user = User.first
   end
 
