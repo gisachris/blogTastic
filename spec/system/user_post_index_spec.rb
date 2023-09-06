@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe 'User Post Index View Testing', type: :system do
   before(:all) do
     @user = User.create(name: 'chris', photo: 'https://images3.alphacoders.com/690/690494.jpg', bio: 'student',
