@@ -13,15 +13,22 @@
     <%= stylesheet_link_tag 'post_show.css' %>
     <%= stylesheet_link_tag 'new_post.css' %>
     <%= stylesheet_link_tag 'new_comment.css' %>
+    <%= stylesheet_link_tag 'navigation.css' %>
+    <%= stylesheet_link_tag 'authentication.css' %>
+    <%= javascript_include_tag 'application' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body class = "whole_content" >
-  <header></header>
+  <header>
+    <%= render partial: "shared/navigation_bar" %>
+  </header>
   <main>
-  <div class="Holder">
-  <%= yield %>
-  </div>
+    <div class="Holder">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </main>
   <footer class = "footer"></footer>
   </body>
