@@ -1,27 +1,26 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = current_user
     @posts = Post.includes(:author, :comments).where(author: @user).references(:author)
     @recent_comments_by_post = @posts.to_h { |post| [post.id, post.recent_comments] }
-    @first_user = User.first
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = Post.find(params[:id])
     @recent_comments = @post.recent_comments
     @new_comment = @post.comments.build
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.build
     @post.comments_counter = 0
     @post.likes_counter = 0
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.build(post_params)
     @post.comments_counter = 0
     @post.likes_counter = 0
@@ -33,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def like
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = Post.find(params[:id])
     if already_liked?(@user, @post)
       redirect_to user_post_path(@user, @post)
@@ -49,7 +48,7 @@ class PostsController < ApplicationController
   end
 
   def unlike
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = Post.find(params[:id])
     @like = Like.find_by(author_id: @user.id, post_id: @post.id)
 

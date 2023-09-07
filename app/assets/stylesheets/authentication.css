@@ -1,0 +1,51 @@
+.Holder_devise {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.log_in_title {
+  margin-right: 10px;
+}
+
+.up_title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.new_user {
+  width: 80%;
+  padding-left: 345px;
+}
+
+label {
+  font-weight: bolder;
+}
+
+input {
+  width: 70%;
+  padding: 5px;
+  padding-left: 2px;
+  padding-right: 0;
+}
+
+.button_auth {
+  width: 60px;
+  padding: 10px;
+  align-self: center;
+  background-color: rgb(115, 148, 219);
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 2px 2px 3.5px black;
+}
+
+.p_link {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+#user_remember_me {
+  width: 30px;
+}

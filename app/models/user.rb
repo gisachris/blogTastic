@@ -1,10 +1,12 @@
 class User < ApplicationRecord
-  validates :name, presence: true
-  validates :posts_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
 
-  has_many :comments, foreign_key: :user_id
-  has_many :likes, foreign_key: :author_id
-  has_many :posts, foreign_key: :author_id
+  validates :name, presence: true
+
+  has_many :comments, foreign_key: :author_id, dependent: :destroy
+  has_many :likes, foreign_key: :author_id, dependent: :destroy
+  has_many :posts, foreign_key: :author_id, dependent: :destroy
 
   def recent_posts
     posts.order(created_at: :DESC).limit(3)

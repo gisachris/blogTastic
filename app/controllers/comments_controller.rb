@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
   private
 
   def find_user
-    @user = ApplicationController.new.current_user
+    @user = current_user
   end
 
   def find_post
