@@ -1,0 +1,13 @@
+<div class='nav_section'>
+  <nav class='navigation_bar'>
+  <%= link_to 'BlogTastic', users_path, class:'logo_text' %>
+    <section class='controls'>
+      <% if user_signed_in?%>
+      <%= link_to 'Edit profile', edit_user_registration_path , class: 'control_link'%>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'control_link'%>
+      <% else %>
+      <%= link_to 'Sign In', user_session_path,class: 'control_link'%>
+      <% end %>      
+    </section>
+  </nav>  
+</div>
