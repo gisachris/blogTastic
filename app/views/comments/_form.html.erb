@@ -2,6 +2,6 @@
 <%= form_with(model: [post, comment], url: user_post_comments_path(user, post)) do |form| %>
   <h1 class= "comment_title">Add comment</h1>
   <%= form.text_area :text%>
-  <%= form.submit "Comment"%>
+  <%= form.submit "Comment", class: 'new_comment_submit_button'%>
 <% end %>
 </section>

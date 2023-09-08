@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
-    @user = current_user
+    @current_user = current_user
+    @user = User.find(params[:user_id])
     @posts = Post.includes(:author, :comments).where(author: @user).references(:author)
     @recent_comments_by_post = @posts.to_h { |post| [post.id, post.recent_comments] }
   end
@@ -29,6 +31,20 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    Comment.where(post_id: @post.id).destroy_all
+    Like.where(post_id: @post.id).destroy_all
+
+    @post.destroy
+    flash[:success] = 'You deleted this post'
+
+    # Decrement the posts_counter for the user
+    @user = User.find(params[:user_id])
+    @user.update(posts_counter: @user.posts_counter - 1)
+    redirect_to user_path(@post.author), notice: 'Post Deleted!'
   end
 
   def like

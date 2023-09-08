@@ -18,6 +18,9 @@ gem 'devise'
 # Email Confirmation
 gem 'letter_opener', group: :development
 
+# CanCanCan authorisation gem
+gem 'cancancan'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
