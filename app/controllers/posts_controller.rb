@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     Comment.where(post_id: @post.id).destroy_all
     Like.where(post_id: @post.id).destroy_all
-    
+
     @post.destroy
     flash[:success] = 'You deleted this post'
 
