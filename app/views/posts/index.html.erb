@@ -1,8 +1,8 @@
 <%= render partial: "shared/person_info" %>
 
 <section class= "new_post_section">
-<% if @user.id %>
-  <%= link_to 'New Post', new_user_post_path(@user) %>
+<% if can? :create, Post && @current_user.id == @user.id%>
+  <%= link_to 'New Post', new_user_post_path(@user), class: 'new_post_link'%>
 <% end %>
 </section>
 

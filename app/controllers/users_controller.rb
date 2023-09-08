@@ -10,8 +10,9 @@ class UsersController < ApplicationController
       sign_out current_user
       redirect_to new_user_session_path
     else
-      @user = current_user
-      @first_user = @user
+      @user = User.find(params[:id])
+      @current_user = current_user
+      @first_user = @current_user
     end
   end
 end

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   devise_scope :user do 
     root "users#index"
     resources :users do
-      resources :posts do
+      delete 'posts/:id', to: 'posts#destroy', as: 'post_delete'
+
+      resources :posts, only: [:index, :show, :new, :create] do
         member do
           post 'like'
           delete 'unlike'
@@ -15,4 +17,3 @@ Rails.application.routes.draw do
     end
   end
 end
-

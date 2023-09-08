@@ -8,8 +8,8 @@
   </section>
 
   <section class= "new_post_section">
-    <% if @user.id == @first_user.id %>
-      <%= link_to 'New Post', new_user_post_path(@user) %>
+    <% if (can? :create, Post) && @current_user.id == @user.id %>
+      <%= link_to 'New Post', new_user_post_path(@user), class: "new_post_link" %>
     <% end %>
   </section>
   
@@ -21,8 +21,14 @@
           <p class="post_content"><%= post.text %></p>
         </span>
         <span class="comments_likes">
-          <span class="comments_count">Comments: <%= post.comments_counter %></span>
-          <span class="likes_count">Likes: <%= post.likes_counter %></span>
+          <% if can? :destroy, post %>
+            <%= button_to "Delete", user_post_delete_path(post.author, post), method: :delete, class: "delete_post_button" %>
+          <% end %>
+
+          <section class='likes_comment_data'>
+            <span class="comments_count">Comments: <%= post.comments_counter %></span>
+            <span class="likes_count">Likes: <%= post.likes_counter %></span>
+          </section>
         <span>
       </div>
     <% end %>

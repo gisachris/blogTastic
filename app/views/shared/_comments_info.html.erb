@@ -1,4 +1,9 @@
 <span class= "comments_line">
-  <h1 class= "username"><%= comment.author.name%>:</h1>
-  <h1 class= "comment"><%= comment.text %></h1>
+  <section class= 'comment_info'>
+    <h1 class= "username"><%= comment.author.name%>:</h1>
+    <h1 class= "comment"><%= comment.text %></h1>
+  </section>
+  <% if can? :destroy, comment %>
+    <%= button_to 'Delete', user_post_comment_path(comment.author_id,comment.post_id,comment.id),method: :delete, class:'delete_comment_button'%>
+  <% end %>
 </span>
