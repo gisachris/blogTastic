@@ -24,7 +24,6 @@ class CommentsController < ApplicationController
     @comment.destroy
     @post = Post.find(@comment.post_id)
 
-
     @post.update(comments_counter: @post.comments_counter - 1)
     redirect_to user_post_path(current_user.id, @post.id), notice: 'Comment deleted.'
   end
