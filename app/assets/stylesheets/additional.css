@@ -1,0 +1,115 @@
+.new_post_link {
+  margin-left: 70px;
+}
+
+.post_v2 {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  padding: 10px;
+  border: 3px solid black;
+  margin-bottom: 15px;
+}
+
+.title_content {
+  width: 75%;
+}
+
+.right_att {
+  width: 25%;
+}
+
+.comments_likes {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.comments_likes_v2 {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.sub_comment_like {
+  text-align: right;
+  margin-top: 60px;
+  width: 170px;
+}
+
+.post-actions > form > button {
+  background-color: rgb(100, 129, 192);
+  border: 0;
+  font-size: 0.9rem;
+}
+
+.delete_post_button {
+  background-color: rgb(100, 129, 192);
+  border: 0;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.button_to {
+  box-shadow: 2px 2px 3.5px black;
+  width: 60px;
+  padding: 2px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(100, 129, 192);
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.delete_post_button_form_2 {
+  box-shadow: 2px 2px 3.5px black;
+  width: 60px;
+  padding: 2px;
+  border-radius: 5px;
+  background-color: rgb(100, 129, 192);
+  border: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.likes_comment_data {
+  margin: 50px 0 0 0;
+}
+
+.post-actions {
+  display: flex;
+  column-gap: 5px;
+}
+
+.comments_line {
+  width: 100%;
+  padding-right: 30px;
+  margin-bottom: 0;
+}
+
+.comment_info {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  align-content: center;
+  font-size: 1.2rem;
+}
+
+
+.delete_comment_button {
+  text-align: center;
+  border: 0;
+  background-color: rgba(100, 129, 192, 0.63);
+}
+
+.comment {
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
