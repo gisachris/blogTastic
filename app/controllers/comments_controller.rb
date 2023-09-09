@@ -21,6 +21,10 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:notice] = 'Comment created successfully.'
+      respond_to do |format|
+        format.html { redirect_to user_post_path(@user, @post) }
+        format.json { render json: @comment, status: :created }
+      end
     else
       render 'new'
     end
