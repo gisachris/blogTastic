@@ -5,6 +5,11 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @posts = Post.includes(:author, :comments).where(author: @user).references(:author)
     @recent_comments_by_post = @posts.to_h { |post| [post.id, post.recent_comments] }
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   def show
@@ -40,10 +45,6 @@ class PostsController < ApplicationController
 
     @post.destroy
     flash[:success] = 'You deleted this post'
-
-    # Decrement the posts_counter for the user
-    @user = User.find(params[:user_id])
-    @user.update(posts_counter: @user.posts_counter - 1)
     redirect_to user_path(@post.author), notice: 'Post Deleted!'
   end
 
