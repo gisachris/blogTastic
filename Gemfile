@@ -21,6 +21,9 @@ gem 'letter_opener', group: :development
 # CanCanCan authorisation gem
 gem 'cancancan'
 
+# API spec documentation generator
+gem 'rswag'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
